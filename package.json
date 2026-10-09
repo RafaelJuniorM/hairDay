@@ -1,0 +1,10 @@
+{
+
+  "scripts": {
+    "server": "json-server --watch server.json --port 3333",
+    "_comment": " serve: comando para rodar o json-server, --watch: para ficar observando as alterações no arquivo server.json, --port: porta que o json-server vai rodar"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.21"
+  }
+}
