@@ -1,10 +1,17 @@
 {
-
+  "name": "hairday",
+  "description": "Aplicação Web para agendamento de corte de cabelo ",
+  "author": "Rafael Martins",
   "scripts": {
     "server": "json-server --watch server.json --port 3333",
+    "build": "webpack",
     "_comment": " serve: comando para rodar o json-server, --watch: para ficar observando as alterações no arquivo server.json, --port: porta que o json-server vai rodar"
   },
   "dependencies": {
     "json-server": "^1.0.0-alpha.21"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }
