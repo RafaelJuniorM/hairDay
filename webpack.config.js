@@ -25,12 +25,12 @@ module.exports = {
         template: path.resolve(__dirname, "index.html"),
         favicon: path.resolve("src", "assets", "scissors.svg"),
     }),
-
+    // #### configuração do plugin para copiar os arquivos de assets ####
     new CopyWebpackPlugin({
         patterns: [
             {
-                from: path.resolve(__dirname, "src", "assets"),
-                to: path.resolve(__dirname, "dist", "src", "assets")
+                from: path.resolve(__dirname, "src", "assets"), // caminho de origem do assets 
+                to: path.resolve(__dirname, "dist", "src", "assets") // caminho de destino do assets
             }
         ]
     })
@@ -42,6 +42,17 @@ module.exports = {
                 test:/\.css$/,
                 use:["style-loader", "css-loader"]
             },
+
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"]
+                    },
+                }
+            }
         ],
     },
 }
