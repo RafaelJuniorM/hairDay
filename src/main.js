@@ -9,5 +9,5 @@ import "./styles/global.css";
 import "./styles/form.css";
 import "./styles/schedule.css";
 
-import dayjs from "dayjs"
-console.log(dayjs().format("DD/MM/YYYY HH:mm:ss"))
+// JS
+import "./modules/form/submit.js"
