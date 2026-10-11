@@ -9,6 +9,7 @@
     "_comment": " serve: comando para rodar o json-server, --watch: para ficar observando as alterações no arquivo server.json, --port: porta que o json-server vai rodar"
   },
   "dependencies": {
+    "dayjs": "^1.11.10",
     "json-server": "^1.0.0-alpha.21"
   },
   "devDependencies": {
