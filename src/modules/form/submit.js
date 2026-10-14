@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+import { schedulesNew } from '../../services/schedule-new.js'
 
 
 const form = document.querySelector('form')
@@ -11,7 +12,7 @@ const inputToday = dayjs(new Date()).format('YYYY-MM-DD')
 selectedDate.value = inputToday
 selectedDate.min = inputToday
 
-form.addEventListener('submit', (event) =>{
+form.addEventListener('submit', async (event) =>{
     event.preventDefault()
 
     try {
@@ -28,7 +29,7 @@ form.addEventListener('submit', (event) =>{
         
         //verifcando se o horario foi selecionado
         if(!hourSelected) {
-            alert("Por favor, selecione um horário disponível.")
+            return alert("Por favor, selecione um horário disponível.")
         }
         
         // recuperar somene a hora selecionada
@@ -40,9 +41,8 @@ form.addEventListener('submit', (event) =>{
         // Gera um ID 
         const id = Math.floor(Math.random() * 1000)
 
-        console.log({
-            id, name, when
-        })
+        // faz o agendamento na API
+        await schedulesNew({ id, name, when })
 
     }catch (error) {
         alert("Não foi possivel realizar o agendamento. Tente novamente mais tarde.")
