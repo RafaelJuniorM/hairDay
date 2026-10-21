@@ -39,7 +39,7 @@ form.addEventListener('submit', async (event) =>{
         const when = dayjs(selectedDate.value).add(hour, "hour")
 
         // Gera um ID 
-        const id = Math.floor(Math.random() * 1000)
+        const id = String(Math.floor(Math.random() * 1000))
 
         // faz o agendamento na API
         await schedulesNew({ id, name, when })
