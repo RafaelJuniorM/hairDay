@@ -2,7 +2,6 @@
 
 Aplicação web para **agendamento de cortes de cabelo**. Com ela, você escolhe uma data, vê os horários livres do dia e marca um atendimento informando o nome do cliente. Também é possível ver os agendamentos do dia, separados por período, e cancelar algum deles.
 
-Projeto desenvolvido durante a formação **Full Stack da Rocketseat**, no módulo de JavaScript.
 ![preview](/src/assets/preview.png)
 ---
 
