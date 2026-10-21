@@ -1,11 +1,11 @@
 import dayjs from 'dayjs'
 import { schedulesNew } from '../../services/schedule-new.js'
-
+import { scheduleDay } from '../schedules/load.js'
 
 const form = document.querySelector('form')
 const selectedDate = document.getElementById('date')
 const clienteName = document.getElementById('client')
-// date atual para o input
+// data atual para ser mostrada no input
 const inputToday = dayjs(new Date()).format('YYYY-MM-DD')
 
 // carrega a data atual e define a data minima como sendo a data atual 
@@ -44,6 +44,11 @@ form.addEventListener('submit', async (event) =>{
         // faz o agendamento na API
         await schedulesNew({ id, name, when })
 
+        // atualiza a lista de agendamentos do dia e os horarios disponiveis
+        await scheduleDay() 
+        
+        // limpa o input do nome do cliente
+        clienteName.value = "" 
     }catch (error) {
         alert("Não foi possivel realizar o agendamento. Tente novamente mais tarde.")
         console.error(error)

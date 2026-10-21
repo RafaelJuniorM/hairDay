@@ -2,7 +2,7 @@ import dayjs from "dayjs"
 import {apiConfig} from "./api-config.js"
 
 // função que busca os agendamentos do dia selecionado
-export async function scheduleFetchByDay(date) {
+export async function scheduleFetchByDay({ date }) {
     try {
         // fazendo a requisição
         const response = await fetch(`${apiConfig.baseURL}/schedules`)

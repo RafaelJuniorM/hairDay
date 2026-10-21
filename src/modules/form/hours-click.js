@@ -1,3 +1,4 @@
+//permite clicar em um horário e destacá-lo com a classe hour-selected
 export function hoursClick() {
     const hours = document.querySelectorAll(".hour-available") // seleciona todos os elementos com a classe hour-available
 
